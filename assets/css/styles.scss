@@ -11,6 +11,16 @@ body {
 
 }
 
+// Markdown Post  ===========================================================================
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 
 
@@ -20,7 +30,7 @@ body {
 // Top Bar
 .navbar.navbar-fixed-top {
     background-color: $top-navbar-background;
-    color: white;
+    color:white;
 }
 
 .navbar-brand {
@@ -40,18 +50,34 @@ body {
     color: #F9C22E
 }
 
+.navbar-toggle {
+    background-color:transparent;
+    color:white;    
+}
+
 // Bottom Bar
+.footer-container{
+    margin-top: 10px;
+}
+
 .navbar.bottom {
     background-color: #2D232E;
-    margin: 0;
     border-radius: 0;
-  
 }
 
-.navbar-text {
-    color: #C7D3D8
+.nav-bar-text {
+    margin: 0 auto;
 }
 
+.nav-bar-text span a {
+    padding-right: 20px;
+    color: #C5CFD3;
+}
+
+.copyright{
+    color: #C5CFD3;
+
+}
 // Sub Navigation Bar
 // TODO: Sub Navbar doesn't work in the current situation
 .sub-navbar {
@@ -62,6 +88,18 @@ body {
     left: 0;
     width: 100%;
     z-index: 1030;
+}
+// Latest Post  ===============================================================================
+.latest-post {
+    list-style: none
+}
+.latest-post-container{
+    padding-left:65px;
+    padding-right:100px;
+}
+
+.latest-post-title{
+    margin-left: 40px;
 }
 
 // Blog  ===============================================================================
@@ -293,6 +331,7 @@ body {
 }
 
 .article-download-link {
+
     padding: 8px 25px;
 }
 

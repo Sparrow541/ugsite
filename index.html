@@ -8,7 +8,38 @@ title: Home
     <h2>Uganda Maternal Health Club </h1>
 
     <p>
-        Welcome to the website. If you're here, you're likely looking to find random words. Random Word Generator is the perfect tool to help you do this. While this tool isn't a word creator, it is a word generator that will generate random words for a variety of activities or uses. Even better, it allows you to adjust the parameters of the random words to best fit your needs.
+        Uganda Maternal Health Club is an online community of practice for obstetric care in Uganda. 
+        We strive to engage all the health workers in Uganda into timely and effective communication, 
+        and improve their practices in further.Welcome to the website. If you're here, you're likely 
+        looking to find random words. Random Word Generator is the perfect tool to help you do this. 
+        While this tool isn't a word creator, it is a word generator that will generate random words 
+        for a variety of activities or uses. 
     </p>
     
 </div>
+
+
+<div class="container-fluid latest-post-container">
+    <h2 class="latest-post-title">Latest Post<h2></h2>    
+        <ul class="latest-post">
+            {% for post in site.posts limit:8 %}
+            <li>
+                <div class="category-list-item row">
+                    <h4 class="category-list-article-title col-lg-9 col-md-8 col-sm-7 col-xs-7"><a
+                            href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                        <div class="category-list-article-meta col-lg-3 col-md-4 col-sm-5 col-xs-5">
+                            {% assign author_name = site.authors | where: 'short_name', post.author | first %}
+                            {% if author_name %}
+                            <span class="category-list-article-author">by <a href="#">{{ author_name.name }}</a></span>
+                            {% endif %}
+                            <div class="category-list-article-date">{{ post.date | date: "%d %B, %Y" }}</div>
+                        </div>
+                </div>
+            </li>
+            {% endfor %}
+            <a href="{{ site.baseurl }}/blog_paginator/index.html">See all posts</a>
+        </ul>
+    </div>
+    
+    
+
