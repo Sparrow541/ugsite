@@ -1,14 +1,6 @@
 ---
-
 title: Categories
 ---
-
-
-
-
-<!-- Solution 1 -->
-
-<!-- Button Version -->
 
 <h1>Categories</h1>
 
@@ -26,7 +18,7 @@ title: Categories
 </ul>
 
 
-<!-- Solution 2 -->
+
 <div class="container-fluid category-list-container">
     {% for item in site.data.category %}
     <div id={{item.name | replace: ' ', '-' }} class="category-list">
@@ -42,7 +34,7 @@ title: Categories
                         <div class="category-list-article-meta col-lg-3 col-md-4 col-sm-5 col-xs-5">
                             {% assign author_name = site.authors | where: 'short_name', post.author | first %}
                             {% if author_name %}
-                            <span class="category-list-article-author">by <a href="#">{{ author_name.name }}</a></span>
+                            <span class="category-list-article-author">by <a href="{{ site.baseurl }}{{ author_name.url }}">{{ author_name.name }}</a></span>
                             {% endif %}
                             <div class="category-list-article-date">{{ post.date | date: "%d %B, %Y" }}</div>
                         </div>
