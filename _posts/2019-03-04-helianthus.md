@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Is This A Random Article for Testing?
 author: wiko
 category: Plant

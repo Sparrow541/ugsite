@@ -7,8 +7,6 @@ $top-navbar-background: #248232;
 
 body {
     padding-top: 70px;
-    
-
 }
 
 .main-container {
@@ -18,6 +16,7 @@ body {
 // Markdown Post  ===========================================================================
 
 img {
+    max-height: 60vh;
     max-width: 100%;
     height: auto;
     display: block;

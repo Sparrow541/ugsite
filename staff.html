@@ -9,25 +9,27 @@ title: Staff
         <li class="staff-info col-lg-6 col-md-6 col-sm-6">
             <h3>{{ author.name }}</a></h3>
             <p>{{ author.content | markdownify }}</p>
-            <h6 class="text-uppercase">Recent Posts<h6>
             {% assign filtered_posts = site.posts | where: 'author', author.short_name %}
-            {% if filtered_posts.size > 4 %}
-                {% assign limited_posts = filtered_posts | slice: 0, 4 %}
-            {% else %}
-                {% assign limited_posts = filtered_posts %}
+
+            {% if filtered_posts.size != 0 %}
+                <h6 class="text-uppercase">Recent Posts<h6>        
+                {% if filtered_posts.size > 4 %}
+                    {% assign limited_posts = filtered_posts | slice: 0, 4 %}
+                    {% else %}
+                    {% assign limited_posts = filtered_posts %}
+                {% endif %}
+                <div class="row auto-clear">
+                {% for post in limited_posts %}
+                    <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <!-- only show 4 posts -->
+                    <p class="staff-list-post-date">{{ post.date | date: "%d %B, %Y" }}</p>
+                    <h5 class="staff-list-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
+                    </li>
+                {% endfor %}
+                </div>
+                <a href="{{ site.baseurl }}{{ author.url }}">See All Posts</a>
             {% endif %}
-            <div class="row auto-clear">
-            {% for post in limited_posts %}
-            <li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <!-- only show 4 posts -->
-                <p class="staff-list-post-date">{{ post.date | date: "%d %B, %Y" }}</p>
-                <h5 class="staff-list-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
-            </li>
-            {% endfor %}
-            </div>
-        <a href="{{ site.baseurl }}{{ author.url }}">See All Posts</a>
         </li>
         {% endfor %}
-    
     </ul>
 </div>
